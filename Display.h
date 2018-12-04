@@ -7,7 +7,6 @@
 Ucglib_ST7735_18x128x160_HWSPI ucg(9, 10, 8);  // (A0=9, CS=10, RESET=8)
 
 void setupDisplay(void) {
-  //ucg.begin(UCG_FONT_MODE_TRANSPARENT);
   ucg.begin(UCG_FONT_MODE_SOLID);
   ucg.clearScreen();
 
@@ -15,8 +14,6 @@ void setupDisplay(void) {
   ucg.drawHLine(0, 25, ucg.getWidth());
   ucg.drawHLine(0, 45, ucg.getWidth());
   ucg.drawHLine(0, 65, ucg.getWidth());
-  
-  //ucg.setFont(ucg_font_ncenR14_tr);
 }
 
 void dispLanLot(int xPos, int yPos) {
