@@ -13,21 +13,15 @@ String CalculateGridSquare(float latitude, float longtitude) {
 
   grid_lat_1 = int((latitude + 90) / 10);                 // Calculate the first 2 characters of the Grid Square
   grid_long_1 = int((longtitude + 180) / 20);
-  //Serial.println(grid_lat_1);
-  //Serial.println(grid_long_1);
     
   lat_2 = (latitude + 90) - (grid_lat_1 * 10);            // Calculate the next 2 digits of the Grid Square
   grid_lat_2 = int(lat_2);
   calc_long_2 = (longtitude + 180) - (grid_long_1 * 20); 
   grid_long_2 = int(calc_long_2 / 2);
-  //Serial.println(grid_lat_2);
-  //Serial.println(grid_long_2);
   
   grid_lat_3 = int((lat_2 - int(lat_2)) / .0416665);      // Calculate the last 2 characters of the Grid Square
   calc_long_3 = calc_long_2 - (grid_long_2 * 2);  
   grid_long_3 = int(calc_long_3 / .083333);
-  //Serial.println(grid_lat_3);
-  //Serial.println(grid_long_3);
   
   grid[0] = A_Z[grid_long_1];                             // Here's the first 2 characters of Grid Square - place into array
   grid[1] = A_Z[grid_lat_1];
