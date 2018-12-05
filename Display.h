@@ -52,7 +52,15 @@ void dispTime(int xPos, int yPos) {
   ucg.setColor(255, 255, 255);
   ucg.setPrintPos(xPos, yPos);
   ucg.print(F("UTC: "));
-  ucg.print(pvt.hour); ucg.print(":"); ucg.print(pvt.minute); ucg.print(":"); 
+  ucg.print(pvt.hour);
+  if (pvt.hour < 10) {
+    ucg.print(F("0"));
+  }
+  ucg.print(pvt.hour); ucg.print(":"); 
+  if (pvt.minute < 10) {
+    ucg.print(F("0"));
+  }
+  ucg.print(pvt.minute); ucg.print(":"); 
   if (pvt.second < 10) {
     ucg.print(F("0"));
   }
